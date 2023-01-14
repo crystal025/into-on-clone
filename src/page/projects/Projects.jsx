@@ -1,20 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ProjectBox from "./components/ProjectBox";
 
 const Projects = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <ul>
-        <li>ALL</li>
-        <li>SPACE</li>
-        <li>GRAPHIC</li>
-        <li>PLANNING</li>
-        <li>BOOTHTAINER</li>
-        <li>WEBINAR</li>
-        <li>OTHERS</li>
+        <li onClick={() => navigate("/projects/all")}>ALL</li>
+        <li onClick={() => navigate("/projects/space")}>SPACE</li>
+        <li onClick={() => navigate("/projects/graphic")}>GRAPHIC</li>
+        <li onClick={() => navigate("/projects/planning")}>PLANNING</li>
+        <li onClick={() => navigate("/projects/boothtainer")}>BOOTHTAINER</li>
+        <li onClick={() => navigate("/projects/webinar")}>WEBINAR</li>
+        <li onClick={() => navigate("/projects/others")}>OTHERS</li>
       </ul>
       <BoxContainer>
-        <ProjectBox url={""} />
+        <ProjectBox />
       </BoxContainer>
     </Container>
   );

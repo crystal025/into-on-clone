@@ -23,7 +23,7 @@ const Header = () => {
       <Logo onClick={() => navigate("/")}></Logo>
       <TextBox onMain={onMain}>
         <p onClick={() => navigate("/about")}>about</p>
-        <p onClick={() => navigate("/projects")}>projects</p>
+        <p onClick={() => navigate("/projects/all")}>projects</p>
         <p onClick={() => navigate("/recruit")}>recruit</p>
         <p onClick={() => navigate("/contact")}>contact</p>
         <p onClick={onClickPartner}>partner</p>

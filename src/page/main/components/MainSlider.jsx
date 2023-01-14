@@ -126,7 +126,7 @@ const TitleBox = styled.div`
   height: 100%;
   z-index: 999;
   color: #fff;
-  font-size: 30px;
+  font-size: 5rem;
   font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   font-weight: 400;
   letter-spacing: 0px;
@@ -141,7 +141,7 @@ const ContentBox = styled.div`
   height: 100%;
   z-index: 999;
   color: #fff;
-  font-size: 18px;
+  font-size: 3rem;
   font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   font-weight: 400;
   letter-spacing: 0px;
