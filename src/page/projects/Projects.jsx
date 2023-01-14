@@ -14,7 +14,7 @@ const Projects = () => {
         <li>OTHERS</li>
       </ul>
       <BoxContainer>
-        <ProjectBox url={""} />
+        <ProjectBox />
       </BoxContainer>
     </Container>
   );
