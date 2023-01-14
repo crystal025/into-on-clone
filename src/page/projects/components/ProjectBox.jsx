@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Project from "./Project";
 
 const ProjectBox = () => {
+  const [list, setList] = useState();
   const projectList = [
     {
       id: 0,
@@ -187,13 +189,36 @@ const ProjectBox = () => {
     },
   ];
 
+  const getCategory = () => {
+    const category = window.location.pathname.split("/")[2];
+    if (category === "all") {
+      setList(projectList);
+    } else {
+      const result = projectList.filter((projects) =>
+        projects.category.includes(category)
+      );
+      setList(result);
+    }
+  };
+
+  useEffect(() => {
+    getCategory();
+  }, []);
   return (
-    <div>
-      {projectList.map((pro) => {
-        return <Project pro={pro} />;
-      })}
-    </div>
+    <Container>
+      {list?.map((project) => (
+        <Project key={project.id} project={project} />
+      ))}
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
 
 export default ProjectBox;
