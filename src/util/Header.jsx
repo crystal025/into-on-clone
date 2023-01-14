@@ -4,24 +4,25 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [onMain, setOnMain] = useState(false);
+  const [onMain, setOnMain] = useState("false");
+  const path = window.location.pathname;
 
   const onClickPartner = () => {
     window.location.href = "http://intoon.noobee.net/";
   };
 
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      setOnMain(true);
+    if (path === "/") {
+      setOnMain("true");
     } else {
-      setOnMain(false);
+      setOnMain("false");
     }
-  }, [onMain]);
+  }, [path]);
 
   return (
     <Container>
       <Logo onClick={() => navigate("/")}></Logo>
-      <TextBox onMain={onMain}>
+      <TextBox color={onMain}>
         <p onClick={() => navigate("/about")}>about</p>
         <p onClick={() => navigate("/projects/all")}>projects</p>
         <p onClick={() => navigate("/recruit")}>recruit</p>
@@ -59,7 +60,7 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 const TextBox = styled.div`
-  color: ${(props) => (props.onMain ? "#fff" : "#000")};
+  color: ${(props) => (props.color === "true" ? "#fff" : "#000")};
   height: 84px;
   line-height: 84px;
   font-size: 20px;

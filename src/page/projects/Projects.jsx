@@ -27,7 +27,7 @@ const Container = styled.div`
   width: 100%;
   margin-top: 7%;
   font-size: 18px;
-
+  margin: 7% auto;
   ul {
     display: flex;
     justify-content: center;
