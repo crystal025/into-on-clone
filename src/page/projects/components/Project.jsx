@@ -47,7 +47,7 @@ const Img = styled.img`
   height: auto;
   &:hover {
     filter: brightness(40%);
-    animation: zoom-in 1s ease infinite;
+    animation: zoom-in 1s ease;
     @keyframes zoom-in {
       0% {
         transform: scale(1);
