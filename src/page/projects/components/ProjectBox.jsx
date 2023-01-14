@@ -4,6 +4,7 @@ import Project from "./Project";
 
 const ProjectBox = () => {
   const [list, setList] = useState();
+  const category = window.location.pathname.split("/")[2];
   const projectList = [
     {
       id: 0,
@@ -190,7 +191,6 @@ const ProjectBox = () => {
   ];
 
   const getCategory = () => {
-    const category = window.location.pathname.split("/")[2];
     if (category === "all") {
       setList(projectList);
     } else {
@@ -203,7 +203,8 @@ const ProjectBox = () => {
 
   useEffect(() => {
     getCategory();
-  }, []);
+  }, [category]);
+
   return (
     <Container>
       {list?.map((project) => (
@@ -216,9 +217,11 @@ const ProjectBox = () => {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   flex-wrap: wrap;
+  flex-grow: 0;
+  margin: 0 auto 0 auto;
 `;
 
 export default ProjectBox;

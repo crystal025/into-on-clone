@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Project = ({ project }) => {
-  console.log(project);
   return (
     <ImgBox>
       <Text>
@@ -18,29 +17,28 @@ const ImgBox = styled.div`
   padding: 10px;
   width: calc(100% / 3.2);
   overflow: hidden;
-  flex-grow: 1;
+  flex-grow: 0;
   text-align: left;
 
   &:hover {
     ${"p"} {
       visibility: visible;
     }
-    ${"img"} {
-      filter: brightness(40%);
-    }
   }
 `;
+
 const Text = styled.p`
   font-weight: 700;
   font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.9;
   letter-spacing: 0px;
   font-style: normal;
   position: absolute;
-  transform: translate(20%, 260%);
+  transform: translate(10%, 380%);
   visibility: hidden;
+  z-index: 999999;
 `;
 
 const Img = styled.img`
@@ -48,6 +46,7 @@ const Img = styled.img`
   max-width: 100%;
   height: auto;
   &:hover {
+    filter: brightness(40%);
     animation: zoom-in 1s ease infinite;
     @keyframes zoom-in {
       0% {
