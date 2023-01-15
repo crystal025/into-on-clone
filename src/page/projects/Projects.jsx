@@ -1,19 +1,75 @@
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ProjectBox from "./components/ProjectBox";
 
 const Projects = () => {
   const navigate = useNavigate();
+  const ulRef = useRef();
+  const categoryList = [
+    "all",
+    "space",
+    "graphic",
+    "planning",
+    "boothtainer",
+    "webinar",
+    "others",
+  ];
+  const indexList = [0, 1, 2, 3, 4, 5, 6];
+  const getCategory = () => {
+    const index = categoryList.findIndex(
+      (category) => category === window.location.pathname.split("/")[2]
+    );
+    const notIndex = indexList.filter((i) => i !== index);
+
+    if (ulRef !== undefined) {
+      const refChild = ulRef?.current.children[index];
+      const oneRefChild = ulRef?.current.children[notIndex[0]];
+      const twoRefChild = ulRef?.current.children[notIndex[1]];
+      const threeRefChild = ulRef?.current.children[notIndex[2]];
+      const fourRefChild = ulRef?.current.children[notIndex[3]];
+      const fiveRefChild = ulRef?.current.children[notIndex[4]];
+      const sixRefChild = ulRef?.current.children[notIndex[5]];
+      if (refChild !== undefined) {
+        refChild.style = "color:#e71e38";
+        oneRefChild.style = "color:#e0dede";
+        twoRefChild.style = "color:#e0dede";
+        threeRefChild.style = "color:#e0dede";
+        fourRefChild.style = "color:#e0dede";
+        fiveRefChild.style = "color:#e0dede";
+        sixRefChild.style = "color:#e0dede";
+      }
+    }
+  };
+
+  useEffect(() => {
+    getCategory();
+  }, [window.location.pathname]);
+
   return (
     <Container>
-      <ul>
-        <li onClick={() => navigate("/projects/all")}>ALL</li>
-        <li onClick={() => navigate("/projects/space")}>SPACE</li>
-        <li onClick={() => navigate("/projects/graphic")}>GRAPHIC</li>
-        <li onClick={() => navigate("/projects/planning")}>PLANNING</li>
-        <li onClick={() => navigate("/projects/boothtainer")}>BOOTHTAINER</li>
-        <li onClick={() => navigate("/projects/webinar")}>WEBINAR</li>
-        <li onClick={() => navigate("/projects/others")}>OTHERS</li>
+      <ul ref={ulRef}>
+        <li onClick={() => navigate("/projects/all")} id={0}>
+          ALL
+        </li>
+        <li onClick={() => navigate("/projects/space")} id={1}>
+          SPACE
+        </li>
+        <li onClick={() => navigate("/projects/graphic")} id={2}>
+          GRAPHIC
+        </li>
+        <li onClick={() => navigate("/projects/planning")} id={3}>
+          PLANNING
+        </li>
+        <li onClick={() => navigate("/projects/boothtainer")} id={4}>
+          BOOTHTAINER
+        </li>
+        <li onClick={() => navigate("/projects/webinar")} id={5}>
+          WEBINAR
+        </li>
+        <li onClick={() => navigate("/projects/others")} id={6}>
+          OTHERS
+        </li>
       </ul>
       <BoxContainer>
         <ProjectBox />
@@ -39,7 +95,7 @@ const Container = styled.div`
     padding: 0;
     line-height: 34px;
     text-align: center;
-    font-weight: 900;
+    font-weight: 400;
     letter-spacing: 0px;
     font-style: normal;
   }
@@ -47,10 +103,10 @@ const Container = styled.div`
   li {
     margin: 15px;
     list-style: none;
-    color: #bdbcbc;
+    color: #e0dede;
 
     :hover {
-      color: red;
+      color: #e71e38;
       text-decoration: underline;
     }
   }

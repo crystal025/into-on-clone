@@ -85,8 +85,9 @@ const ReTitle = styled.h2`
 
 const TeamsExplain = styled.div`
   background-image: url("http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/11/recruit-이미지-변경.jpg");
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 40px;
   padding-right: 30px;
   padding-bottom: 40px;

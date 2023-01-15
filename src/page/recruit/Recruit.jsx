@@ -18,7 +18,8 @@ const Recruit = () => {
 };
 
 const Container = styled.div`
-  max-width: 100%;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   zoom: 1;
   background-color: rgba(255, 255, 255, 0);
