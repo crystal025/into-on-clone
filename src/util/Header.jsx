@@ -37,7 +37,6 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  //min-width: 800px;
   width: 100%;
   height: 84px;
   display: flex;
@@ -47,7 +46,6 @@ const Container = styled.div`
   padding-left: 30px;
   padding-right: 30px;
   backface-visibility: hidden;
-  transition: background-color 0.25s ease-in-out;
   z-index: 999;
   overflow-x: hidden;
 `;
@@ -60,7 +58,7 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 const TextBox = styled.div`
-  color: ${(props) => (props.color === "true" ? "#fff" : "#000")};
+  color: ${(props) => (props.color === "true" ? "#fff" : "#9fa0a0")};
   height: 84px;
   line-height: 84px;
   font-size: 20px;
