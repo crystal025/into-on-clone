@@ -29,7 +29,6 @@ const ImgBox = styled.div`
 
 const Text = styled.p`
   font-weight: 700;
-  font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   color: #fff;
   font-size: 1rem;
   line-height: 1.9;
