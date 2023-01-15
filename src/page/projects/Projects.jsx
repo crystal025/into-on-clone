@@ -26,7 +26,7 @@ const Container = styled.div`
   max-width: 1200px;
   width: 100%;
   margin-top: 7%;
-  font-size: 18px;
+  font-size: 1.7rem;
   margin: 7% auto;
   ul {
     display: flex;
@@ -39,7 +39,7 @@ const Container = styled.div`
     padding: 0;
     line-height: 34px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 900;
     letter-spacing: 0px;
     font-style: normal;
   }
@@ -47,7 +47,7 @@ const Container = styled.div`
   li {
     margin: 15px;
     list-style: none;
-    color: #666;
+    color: #bdbcbc;
 
     :hover {
       color: red;

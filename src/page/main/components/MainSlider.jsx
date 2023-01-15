@@ -128,12 +128,12 @@ const TitleBox = styled.div`
   color: #fff;
   font-size: 5rem;
   font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0px;
   font-style: normal;
   line-height: 1.9;
   position: relative;
-  bottom: 400px;
+  bottom: 500px;
 `;
 
 const ContentBox = styled.div`
@@ -141,13 +141,13 @@ const ContentBox = styled.div`
   height: 100%;
   z-index: 999;
   color: #fff;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0px;
+  font-weight: 200;
+  letter-spacing: 10px;
   font-style: normal;
   line-height: 1.9;
   position: relative;
-  bottom: 400px;
+  bottom: 500px;
 `;
 export default MainSlider;
