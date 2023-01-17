@@ -23,6 +23,17 @@ const Projects = () => {
     const notIndex = indexList.filter((i) => i !== index);
 
     if (ulRef !== undefined) {
+      const liList = document.querySelectorAll("li");
+      liList.forEach((li) => {
+        li.addEventListener("mouseover", () => {
+          li.style = "color:#e71e38";
+        });
+      });
+      liList.forEach((li) => {
+        li.addEventListener("mouseout", () => {
+          li.style = "color:#e0dede";
+        });
+      });
       const refChild = ulRef?.current.children[index];
       const oneRefChild = ulRef?.current.children[notIndex[0]];
       const twoRefChild = ulRef?.current.children[notIndex[1]];
@@ -42,13 +53,18 @@ const Projects = () => {
     }
   };
 
+  const hoverEvent = () => {
+    console.log("HEele");
+    //styled = "color:#e71e38";
+  };
+
   useEffect(() => {
     getCategory();
   }, [window.location.pathname]);
 
   return (
     <Container>
-      <ul ref={ulRef}>
+      <ul ref={ulRef} id="list">
         <li onClick={() => navigate("/projects/all")} id={0}>
           ALL
         </li>
