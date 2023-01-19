@@ -22,8 +22,6 @@ const Projects = () => {
       (category) => category === window.location.pathname.split("/")[2]
     );
     const notIndex = indexList.filter((i) => i !== index);
-
-    
       const refChild = ulRef?.current.children[index];
       const oneRefChild = ulRef?.current.children[notIndex[0]];
       const twoRefChild = ulRef?.current.children[notIndex[1]];
