@@ -24,6 +24,15 @@ const Container = styled.div`
     visibility: visible;
     animation-duration: 0.7s;
     font-family: NanumSquare, dotum, 돋움, sans-serif;
+    @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }}
 
     p{
         word-break: keep-all;
@@ -35,6 +44,11 @@ const Container = styled.div`
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    }
+
+    h2,p,img{
+        position: relative;
+        animation: fadeInUp 1s;
     }
 `
 

@@ -65,6 +65,8 @@ const Container = styled.div`
     visibility: visible;
     animation-duration: 0.7s;
     font-family: NanumSquare, dotum, 돋움, sans-serif;
+    position: relative;
+    animation: fadeInUp 1s;
 
     ul {
         display: block;
