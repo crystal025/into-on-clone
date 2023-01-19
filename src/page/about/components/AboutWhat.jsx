@@ -20,34 +20,32 @@ const AboutWhat = () => {
                 <li>
                     <img alt="icon02" src="http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/icon02.png"/>
                     <LiBox>
-                    <span>디자인</span>
-                    <p>광고디자인, 전시디자인, 공간디자인의 전문 인력들이 개성과 소신으로 브랜드의 가치를 높이고, 독창적인 홍보의 장을 마련해 드립니다.</p>
+                    <span>{t("about-what-2-1")}</span>
+                    <p>{t("about-what-2-2")}</p>
                     </LiBox>
                 </li>
                 
                 <li>
                     <img alt="icon03" src="http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/icon03.png"/>
                     <LiBox>
-                    <span>전시</span>
-                    <p>전국 17개 전문전시장에 등록되어있으며 제작, 시공, 해체 그리고 다양한 물품의 렌탈등 모든 서비스를 제공합니다.</p>
+                    <span>{t("about-what-3-1")}</span>
+                    <p>{t("about-what-3-2")}</p>
                     </LiBox>
                 </li>
                 
                 <li>
                     <img alt="icon04" src="	http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/icon04.png"/>
                     <LiBox>
-                    <span>물류</span>
-                    <p>온라인 시스템 운영으로 물류의 보관, 입ㆍ출고, 정산서비스를 합리적 비용으로 이용할 수 있으며 최고의 배송업체와 제휴하여 국내외 배송서비스가 가능합니다.</p>
+                    <span>{t("about-what-4-1")}</span>
+                    <p>{t("about-what-4-2")}</p>
                     </LiBox>
                 </li>
                 
                 <li>
                     <img alt="icon05" src=""/>
                     <LiBox>
-                    <span>정보기술</span>
-                    <p>웹 개발, 모바일 개발. 사이트 제작, 심포지엄 진행, 온라인 방송촬영, Veeva 컨텐츠 개발이 가능합니다.
-                        <br></br>
-경쟁사 대비 가장 많은 Veeva multichannel certification 보유</p>
+                    <span>{t("about-what-5-1")}</span>
+                    <p style={{"whiteSpace":"pre-line"}}>{t("about-what-5-2")}</p>
                     </LiBox>
                 </li>
             </ul>
