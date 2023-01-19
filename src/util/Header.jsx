@@ -59,6 +59,7 @@ background-color: ${(props) => (props.background === "true" ? "transparent"  : "
   backface-visibility: hidden;
   z-index: 999;
   overflow-x: hidden;
+ 
 `;
 const Logo = styled.div`
   width: 120px;
@@ -69,6 +70,7 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 const TextBox = styled.div`
+ font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   color: ${(props) => (props.color === "true" ? "#fff" : "#9fa0a0")};
   height: 84px;
   line-height: 84px;
@@ -82,6 +84,8 @@ const TextBox = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 30px;
+  -webkit-font-smoothing: subpixel-antialiased;
+
 
   p {
     margin-right: 45px;

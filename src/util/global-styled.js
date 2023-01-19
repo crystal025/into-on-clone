@@ -2,13 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 *{
+    font-family: "Noto Sans KR", NanumSquare, dotum, 돋움, sans-serif
     margin: 0;
     padding: 0;
    
 }
 body {
     box-sizing: border-box;
-    font-family: "Noto Sans KR", NanumSquare, dotum, 돋움, sans-serif;
 }
 
 h2 {
