@@ -27,16 +27,16 @@ const Header = () => {
     <Container background={onMain}>
       <Logo onClick={() => navigate("/")}></Logo>
       <TextBox color={onMain}>
-        <p onClick={() => navigate("/about")}>about</p>
-        <p onClick={() => navigate("/projects/all")}>projects</p>
-        <p onClick={() => navigate("/recruit")}>recruit</p>
-        <p onClick={() => navigate("/contact")}>contact</p>
-        <p onClick={onClickPartner}>partner</p>
+        <li onClick={() => navigate("/about")}>about</li>
+        <li onClick={() => navigate("/projects/all")}>projects</li>
+        <li onClick={() => navigate("/recruit")}>recruit</li>
+        <li onClick={() => navigate("/contact")}>contact</li>
+        <li onClick={onClickPartner}>partner</li>
         <Circle>
-        <p onClick={changelanguageToKo}>ko</p>
+        <li onClick={changelanguageToKo}>ko</li>
         </Circle>
         <Circle>
-        <p onClick={changelanguageToEn}>En</p>
+        <li onClick={changelanguageToEn}>En</li>
         </Circle>
       </TextBox>
     </Container>
@@ -69,13 +69,12 @@ const Logo = styled.div`
   background-position: center;
   cursor: pointer;
 `;
-const TextBox = styled.div`
- font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
+const TextBox = styled.ul`
   color: ${(props) => (props.color === "true" ? "#fff" : "#9fa0a0")};
   height: 84px;
   line-height: 84px;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0px;
   font-style: normal;
   cursor: pointer;
@@ -84,10 +83,16 @@ const TextBox = styled.div`
   align-items: center;
   flex-direction: row;
   padding-right: 30px;
-  -webkit-font-smoothing: subpixel-antialiased;
+  justify-content: center;
+    overflow: hidden;
+    list-style: none;
+    margin-bottom: 43px;
+    margin-top: 50px;
+    padding: 0;
+    line-height: 34px;
 
 
-  p {
+  li {
     margin-right: 45px;
     :hover {
       color: red;
@@ -105,9 +110,9 @@ const Circle = styled.div`
   margin-right: 0.5rem;
 
 
-  p{
+  li{
     position: relative;
-    bottom: 0.1rem;
+    top: 1rem;
     left: 0.3rem;
     font-size: smaller;
   }
