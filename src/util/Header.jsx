@@ -33,10 +33,10 @@ const Header = () => {
         <li onClick={() => navigate("/contact")}>contact</li>
         <li onClick={onClickPartner}>partner</li>
         <Circle>
-        <li onClick={changelanguageToKo}>ko</li>
+        <li onClick={changelanguageToKo}>kOR</li>
         </Circle>
         <Circle>
-        <li onClick={changelanguageToEn}>En</li>
+        <li onClick={changelanguageToEn}>ENG</li>
         </Circle>
       </TextBox>
     </Container>
@@ -111,10 +111,10 @@ const Circle = styled.div`
 
 
   li{
+    font-size: 0.7rem;
     position: relative;
     top: 1rem;
     left: 0.3rem;
-    font-size: smaller;
   }
 `
 export default Header;
