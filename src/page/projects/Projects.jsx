@@ -16,24 +16,14 @@ const Projects = () => {
     "others",
   ];
   const indexList = [0, 1, 2, 3, 4, 5, 6];
-  const getCategory = () => {
+  
+  const getCategory = async () => {
     const index = categoryList.findIndex(
       (category) => category === window.location.pathname.split("/")[2]
     );
     const notIndex = indexList.filter((i) => i !== index);
 
-    if (ulRef !== undefined) {
-      const liList = document.querySelectorAll("li");
-      liList.forEach((li) => {
-        li.addEventListener("mouseover", () => {
-          li.style = "color:#e71e38";
-        });
-      });
-      liList.forEach((li) => {
-        li.addEventListener("mouseout", () => {
-          li.style = "color:#e0dede";
-        });
-      });
+    
       const refChild = ulRef?.current.children[index];
       const oneRefChild = ulRef?.current.children[notIndex[0]];
       const twoRefChild = ulRef?.current.children[notIndex[1]];
@@ -41,7 +31,7 @@ const Projects = () => {
       const fourRefChild = ulRef?.current.children[notIndex[3]];
       const fiveRefChild = ulRef?.current.children[notIndex[4]];
       const sixRefChild = ulRef?.current.children[notIndex[5]];
-      if (refChild !== undefined) {
+      
         refChild.style = "color:#e71e38";
         oneRefChild.style = "color:#e0dede";
         twoRefChild.style = "color:#e0dede";
@@ -49,12 +39,27 @@ const Projects = () => {
         fourRefChild.style = "color:#e0dede";
         fiveRefChild.style = "color:#e0dede";
         sixRefChild.style = "color:#e0dede";
-      }
-    }
+      
+    
   };
+
+  const hoverEvent = () => {
+    const liList = document.querySelectorAll("li");
+    liList.forEach((li) => {
+      li.addEventListener("mouseover", () => {
+        li.style = "color:#e71e38";
+      });
+    });
+    liList.forEach((li) => {
+      li.addEventListener("mouseout", () => {
+        li.style = "color:#e0dede";
+      });
+    });
+  } 
 
   useEffect(() => {
     getCategory();
+    hoverEvent();
   }, [window.location.pathname]);
 
   return (
