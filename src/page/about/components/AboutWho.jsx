@@ -23,7 +23,6 @@ const Container = styled.div`
     margin: 0px auto 20px auto;
     visibility: visible;
     animation-duration: 0.7s;
-    font-family: NanumSquare, dotum, 돋움, sans-serif;
     @keyframes fadeInUp {
     0% {
         opacity: 0;
