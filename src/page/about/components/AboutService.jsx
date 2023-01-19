@@ -99,6 +99,8 @@ const TextContainer = styled.div`
   margin: 0px auto 20px auto;
   animation-duration: 0.7s;
   font-family: NanumSquare, dotum, 돋움, sans-serif;
+  position: relative;
+        animation: fadeInUp 1s;
 `;
 
 const FirstContainer = styled.div`
@@ -110,11 +112,15 @@ const FirstContainer = styled.div`
   padding-bottom: 5%;
   margin-bottom: 20px;
   margin-left: -55px;
+  position: relative;
+        animation: fadeInUp 1s;
 `;
 const AboutBox = styled.div`
   height: fit-content;
   border-left: 1px solid #e7203a;
   padding-left: 10px;
+  position: relative;
+        animation: fadeInUp 1s;
 `;
 
 const BoxTitle = styled.p`
@@ -123,6 +129,8 @@ const BoxTitle = styled.p`
   font-weight: 800;
   margin-top: 0;
   margin-bottom: 20px;
+  position: relative;
+        animation: fadeInUp 1s;
 `;
 const BoxContent = styled.p`
   color: #666666;
@@ -131,5 +139,7 @@ const BoxContent = styled.p`
   font-weight: 400;
   letter-spacing: 0px;
   font-style: normal;
+  position: relative;
+        animation: fadeInUp 1s;
 `;
 export default AboutService;

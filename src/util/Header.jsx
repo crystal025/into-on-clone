@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
   const navigate = useNavigate();
+  const { i18n } = useTranslation(['page']);
   const [onMain, setOnMain] = useState("false");
   const path = window.location.pathname;
+
+  const changelanguageToKo = () => i18n.changeLanguage('ko')
+  const changelanguageToEn = () => i18n.changeLanguage('en')
 
   const onClickPartner = () => {
     window.location.href = "http://intoon.noobee.net/";
@@ -18,9 +23,8 @@ const Header = () => {
       setOnMain("false");
     }
   }, [path]);
-
   return (
-    <Container>
+    <Container background={onMain}>
       <Logo onClick={() => navigate("/")}></Logo>
       <TextBox color={onMain}>
         <p onClick={() => navigate("/about")}>about</p>
@@ -28,17 +32,24 @@ const Header = () => {
         <p onClick={() => navigate("/recruit")}>recruit</p>
         <p onClick={() => navigate("/contact")}>contact</p>
         <p onClick={onClickPartner}>partner</p>
+        <Circle>
+        <p onClick={changelanguageToKo}>ko</p>
+        </Circle>
+        <Circle>
+        <p onClick={changelanguageToEn}>En</p>
+        </Circle>
       </TextBox>
     </Container>
   );
 };
 
 const Container = styled.div`
+background-color: ${(props) => (props.background === "true" ? "transparent"  : "#fff")};
+  height: 84px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 84px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +72,7 @@ const TextBox = styled.div`
   color: ${(props) => (props.color === "true" ? "#fff" : "#9fa0a0")};
   height: 84px;
   line-height: 84px;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0px;
   font-style: normal;
@@ -70,6 +81,7 @@ const TextBox = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  padding-right: 30px;
 
   p {
     margin-right: 45px;
@@ -79,4 +91,21 @@ const TextBox = styled.div`
     }
   }
 `;
+
+const Circle = styled.div`
+  width: 2rem;
+  height:  2rem;
+  line-height: 0%;
+  border: 1px solid #9fa0a0;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+
+
+  p{
+    position: relative;
+    bottom: 0.1rem;
+    left: 0.3rem;
+    font-size: smaller;
+  }
+`
 export default Header;

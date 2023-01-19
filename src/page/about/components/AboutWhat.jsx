@@ -1,6 +1,10 @@
 import styled from "styled-components"
+import { useTranslation } from 'react-i18next'
+
 
 const AboutWhat = () => {
+    const { t } = useTranslation()
+
     return(
         <Container>
             <h2>what we do</h2>
@@ -9,8 +13,8 @@ const AboutWhat = () => {
                     <img alt="icon01" src="http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/icon01.png
 "/>
                     <LiBox>
-                    <span>기획</span>
-                    <p>맞춤형 컨셉, 행사의 기획과 제안 그리고 운영까지 토탈 솔루션을 제공해드립니다. 전문 기획자들의 다양한 경험과 참신한 아이디어로 높은 만족도의 결과물을 얻으실 수 있습니다.</p>
+                    <span>{t("about-what-1-1")}</span>
+                    <p>{t("about-what-1-2")}</p>
                     </LiBox>
                 </li>
                 <li>
@@ -61,6 +65,8 @@ const Container = styled.div`
     visibility: visible;
     animation-duration: 0.7s;
     font-family: NanumSquare, dotum, 돋움, sans-serif;
+    position: relative;
+    animation: fadeInUp 1s;
 
     ul {
         display: block;
