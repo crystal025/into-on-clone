@@ -53,11 +53,6 @@ const Projects = () => {
     }
   };
 
-  const hoverEvent = () => {
-    console.log("HEele");
-    //styled = "color:#e71e38";
-  };
-
   useEffect(() => {
     getCategory();
   }, [window.location.pathname]);
