@@ -98,7 +98,6 @@ const TextContainer = styled.div`
   padding-left: 30px;
   margin: 0px auto 20px auto;
   animation-duration: 0.7s;
-  font-family: NanumSquare, dotum, 돋움, sans-serif;
   position: relative;
         animation: fadeInUp 1s;
 `;

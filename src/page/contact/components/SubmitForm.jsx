@@ -32,7 +32,6 @@ const FormText = styled.p`
   font-weight: 400;
   letter-spacing: 0px;
   font-style: normal;
-  font-family: "Noto Sans KR", NanumSquare, dotum, 돋움, sans-serif;
 `;
 
 const FormInput = styled.input`

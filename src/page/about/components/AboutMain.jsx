@@ -38,7 +38,6 @@ const TitleBox = styled.div`
     font-size: 90px;
     color: #000000;
     font-weight: 800;
-    font-family: 'NanumSquare';
     position: relative;
         animation: fadeInDown 1s;
 `
