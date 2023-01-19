@@ -23,11 +23,12 @@ const MainSlider = () => {
             url={
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main1-1.jpg"
             }
-          ></ImageBox>
+          >
           <TitleBox>beauty of senses & joy of challenges</TitleBox>
           <ContentBox>
             Our design creatively tells your brand's story.
           </ContentBox>
+          </ImageBox>
         </div>
         <div>
           <ImageBox
@@ -35,11 +36,12 @@ const MainSlider = () => {
             url={
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main2-1.jpg"
             }
-          ></ImageBox>
+          >
           <TitleBox>beauty of senses & joy of challenges</TitleBox>
           <ContentBox>
             Our design creatively tells your brand's story.
-          </ContentBox>
+          </ContentBox> 
+          </ImageBox>
         </div>
         <div>
           <ImageBox
@@ -47,11 +49,12 @@ const MainSlider = () => {
             url={
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main3-2.jpg"
             }
-          ></ImageBox>
+          >
           <TitleBox>beauty of senses & joy of challenges</TitleBox>
           <ContentBox>
             Our design creatively tells your brand's story.
           </ContentBox>
+          </ImageBox>
         </div>
         <div>
           <ImageBox
@@ -59,11 +62,12 @@ const MainSlider = () => {
             url={
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main4-1.jpg"
             }
-          ></ImageBox>
+          >
           <TitleBox>beauty of senses & joy of challenges</TitleBox>
           <ContentBox>
             Our design creatively tells your brand's story.
           </ContentBox>
+          </ImageBox>
         </div>
       </StyledSlide>
     </Container>
@@ -83,6 +87,10 @@ const Container = styled.div`
 const ImageBox = styled.div`
   width: 100vw;
   height: 100vh;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   background-position: center;
   background-size: cover;
   background-image: url(${(props) => props.url});
@@ -92,11 +100,12 @@ const StyledSlide = styled(Slider)`
   margin-top: 60px;
   margin-bottom: -40px;
   width: 100%;
+  overflow-y: hidden;
   .slick-list {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    animation: zoom-in 9s ease infinite;
+    animation: zoom-in 9s ease;
 
     @keyframes zoom-in {
       0% {
@@ -113,41 +122,43 @@ const StyledSlide = styled(Slider)`
   .slick-track {
     display: flex;
     height: 100%;
+    overflow-y: hidden;
   }
   .slick-dots {
-    display: block;
-    position: absolute;
-    top: 50rem;
+    position: relative;
+    bottom: 70px;
+    .slick-active {
+      button::before {
+        color: #c1c1c1;
+      }
+    }
+    button::before {
+      color: #e9e9e9;
+    }
   }
 `;
 
-const TitleBox = styled.div`
-  width: 100%;
-  height: 100%;
+
+const TitleBox = styled.h2`
   z-index: 999;
   color: #fff;
   font-size: 5rem;
-  font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   font-weight: 600;
   letter-spacing: 0px;
   font-style: normal;
   line-height: 1.9;
-  position: relative;
-  bottom: 500px;
+  text-align: center;
 `;
 
-const ContentBox = styled.div`
-  width: 100%;
-  height: 100%;
+const ContentBox = styled.p`
   z-index: 999;
   color: #fff;
   font-size: 2rem;
-  font-family: "Noto Sans KR", "NanumSquare", dotum, "ë‹ì›€", sans-serif;
   font-weight: 200;
   letter-spacing: 10px;
   font-style: normal;
   line-height: 1.9;
-  position: relative;
-  bottom: 500px;
+  text-align: center;
 `;
+
 export default MainSlider;
