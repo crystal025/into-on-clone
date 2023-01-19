@@ -7,7 +7,7 @@ const MainSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,

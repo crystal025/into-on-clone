@@ -92,7 +92,7 @@ const BackgroundImg = styled.div`
 `;
 const TextContainer = styled.div`
   max-width: 1200px;
-  padding-top: 5%;
+  padding-top: 1%;
   padding-right: 30px;
   padding-bottom: 5%;
   padding-left: 30px;
