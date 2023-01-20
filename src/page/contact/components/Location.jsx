@@ -47,6 +47,16 @@ const Container = styled.div`
   text-align: right;
   width: 40vw;
   margin-right: 30px;
+  animation: fadeInLeft 1s;
+  @keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }}
 `;
 const MapTitle = styled.p`
   width: 100%;
