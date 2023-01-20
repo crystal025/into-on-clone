@@ -2,8 +2,11 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ProjectBox from "./components/ProjectBox";
+import useScrollFadeIn from "../../hooks/useScrollFadeIn"
 
 const Projects = () => {
+  const animatedItem = useScrollFadeIn();
+
   const navigate = useNavigate();
   const ulRef = useRef();
   const categoryList = [
@@ -68,7 +71,7 @@ const Projects = () => {
           OTHERS
         </li>
       </ul>
-      <BoxContainer>
+      <BoxContainer {...animatedItem}>
         <ProjectBox />
       </BoxContainer>
     </Container>

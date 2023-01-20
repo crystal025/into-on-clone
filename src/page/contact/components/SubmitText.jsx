@@ -21,6 +21,16 @@ const Container = styled.div`
   flex-direction: column;
   width: 40vw;
   text-align: left;
+  animation: fadeInRight 1s;
+  @keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }}
 `;
 const SubmitTitle = styled.p`
   margin-top: 30px;

@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const AboutService = () => {
+  const animatedItem = useScrollFadeIn();
+
   return (
     <Container>
       <BackgroundImg>
-        <TextContainer>
+        <TextContainer {...animatedItem}>
           <h2>basic services</h2>
           <FirstContainer>
             <AboutBox>

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next'
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const RecruitExplain = () => {
   const { t } = useTranslation()
+  const animatedItem = useScrollFadeIn();
 
   return (
-    <div>
+    <div {...animatedItem}>
       <Explain style={{"whiteSpace":"pre-line"}}>
       {t("recruit-footer")}
       </Explain>

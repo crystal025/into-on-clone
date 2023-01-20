@@ -1,10 +1,15 @@
 import styled from "styled-components"
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const AboutMain = () => {
+    const animatedItem = useScrollFadeIn();
+
     return(
         <Container>
+            <div  {...animatedItem}>
             <TitleBox>your creative partner</TitleBox>
             <ContentBox>brand activator & design solutionist</ContentBox>
+            </div>
         </Container>
     )
 }

@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const RecruitTeams = () => {
+  const animatedItem = useScrollFadeIn();
   return (
     <RecruitContainer>
       <ReTitle>our teams</ReTitle>
       <TeamsExplain>
+        <TextBox {...animatedItem}>
         <TeamBox>
           <BoxTitle>PLANNING</BoxTitle>
           <BoxContent>
@@ -50,6 +53,7 @@ const RecruitTeams = () => {
             medical consult
           </BoxContent>
         </TeamBox>
+        </TextBox>
       </TeamsExplain>
     </RecruitContainer>
   );
@@ -97,7 +101,11 @@ const TeamsExplain = styled.div`
   flex-wrap: wrap;
   width: 100%;
 `;
-
+const TextBox = styled.div`
+   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
 const TeamBox = styled.div`
   height: fit-content;
   border-left: 1px solid #e7203a;
