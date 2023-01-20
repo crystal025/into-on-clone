@@ -5,9 +5,11 @@ const AboutMain = () => {
     const animatedItem = useScrollFadeIn();
 
     return(
-        <Container {...animatedItem}>
+        <Container>
+            <div  {...animatedItem}>
             <TitleBox>your creative partner</TitleBox>
             <ContentBox>brand activator & design solutionist</ContentBox>
+            </div>
         </Container>
     )
 }

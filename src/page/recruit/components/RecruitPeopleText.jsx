@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next'
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const RecruitPeopleText = () => {
   const { t } = useTranslation()
+  const animatedItem = useScrollFadeIn();
+
   return (
-    <RecruitContainer>
+    <RecruitContainer {...animatedItem}>
       <ReTitle>INTO-ON people</ReTitle>
       <ReContent style={{"whiteSpace":"pre-line"}}>
       {t("recruit-people")}
