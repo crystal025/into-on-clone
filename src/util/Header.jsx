@@ -7,15 +7,13 @@ const Header = () => {
   const navigate = useNavigate();
   const { i18n } = useTranslation(['page']);
   const [onMain, setOnMain] = useState("false");
+  const [korean, setKorean] = useState("true")
   const ulRef = useRef();
   const path = window.location.pathname;
 
   const changelanguageToKo = () => i18n.changeLanguage('ko')
   const changelanguageToEn = () => i18n.changeLanguage('en')
 
-  const onClickPartner = () => {
-    window.location.href = "http://intoon.noobee.net/";
-  };
   const categoryList = [
     "about",
     "projects",
@@ -41,9 +39,25 @@ const Header = () => {
         oneRefChild.style = "color:#e0dede";
         twoRefChild.style = "color:#e0dede";
         threeRefChild.style = "color:#e0dede";
-        fourRefChild.style = "color:#e0dede";
-       
+        fourRefChild.style = "color:#e0dede";     
   };
+
+  const onClickPartner = () => {
+    window.location.href = "http://intoon.noobee.net/";
+  };
+
+  const searchLang = () => {
+    if(i18n.language === "ko"){
+      setKorean("true")
+    }
+    else if(i18n.language === "en"){
+      setKorean("false")
+    }
+  }
+
+  useEffect(()=>{
+    searchLang()
+  },[i18n.language])
 
   useEffect(() => {
     getCategory();
@@ -66,12 +80,12 @@ const Header = () => {
         <li onClick={() => navigate("/recruit")}>recruit</li>
         <li onClick={() => navigate("/contact")}>contact</li>
         <li onClick={onClickPartner}>partner</li>
-        <Circle>
-        <li onClick={changelanguageToKo}>kOR</li>
+        <Circle color={korean}>
+        <li onClick={changelanguageToKo} >KOR</li>
         </Circle>
-        <Circle>
-        <li onClick={changelanguageToEn}>ENG</li>
-        </Circle>
+        <CircleEn color={korean}>
+        <li onClick={changelanguageToEn} >ENG</li>
+        </CircleEn>
       </TextBox>
     </Container>
   );
@@ -129,7 +143,7 @@ const TextBox = styled.ul`
   li {
     margin-right: 45px;
     :hover {
-      color: red;
+      color: #e71e38;
       text-decoration: underline;
     }
   }
@@ -139,7 +153,7 @@ const Circle = styled.div`
   width: 2rem;
   height:  2rem;
   line-height: 0%;
-  border: 1px solid #9fa0a0;
+  border: 1px solid ${(props)=>(props.color === "true" ? "#e71e38" : "#9fa0a0")};
   border-radius: 50%;
   margin-right: 0.5rem;
 
@@ -151,4 +165,20 @@ const Circle = styled.div`
     left: 0.3rem;
   }
 `
+
+const CircleEn = styled.div`
+  width: 2rem;
+  height:  2rem;
+  line-height: 0%;
+  border: 1px solid ${(props)=>(props.color === "true" ? "#9fa0a0" :  "#e71e38" )};
+  border-radius: 50%;
+  margin-right: 0.5rem;
+
+
+  li{
+    font-size: 0.7rem;
+    position: relative;
+    top: 1rem;
+    left: 0.3rem;
+  }`
 export default Header;
