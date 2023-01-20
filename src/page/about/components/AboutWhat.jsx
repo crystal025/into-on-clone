@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { useTranslation } from 'react-i18next'
-
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const AboutWhat = () => {
     const { t } = useTranslation()
+    const animatedItem = useScrollFadeIn();
 
     return(
-        <Container>
+        <Container {...animatedItem}>
             <h2>what we do</h2>
             <ul>
                 <li>

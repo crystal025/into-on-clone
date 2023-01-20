@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { useTranslation } from 'react-i18next'
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const RecruitPlayers = () => {
+  const { t } = useTranslation()
+  const animatedItem = useScrollFadeIn();
+
   return (
-    <RecruitContainer>
+    <RecruitContainer {...animatedItem}>
       <ReTitle>looking for team players</ReTitle>
-      <ReContent>
-        INTO-ON의 미래를 함께 열어 나아갈 열정과 재능을 가진 인재들을 찾습니다.
-        <br></br>
-        언제나 문은 열려 있습니다. 망설이지 말고 문을 두드리세요.
+      <ReContent style={{"whiteSpace":"pre-line"}}>
+      {t("recruit-players")}
       </ReContent>
     </RecruitContainer>
   );

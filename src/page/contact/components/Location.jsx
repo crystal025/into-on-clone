@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { useTranslation } from 'react-i18next'
 
 const Location = ({ position, setPosition }) => {
+  const { t } = useTranslation()
+
   return (
     <Container>
       <MapTitle>DESIGN STUDIO & SEOUL OFFICE</MapTitle>
@@ -8,45 +11,29 @@ const Location = ({ position, setPosition }) => {
         ⌖
       </SeoulMapBtn>
       <MapText>
-        서울특별시 용산구 백범로 341 금호리첸시아 A블록
-        <br></br>
-        T. +82 2 2285 2506
+      {t("contact-seoul")}
       </MapText>
       <MapTitle>EXHIBITION & LOGISTICS CENTER</MapTitle>
       <MapBtn onClick={() => setPosition(!position)} position={position}>
         ⌖
       </MapBtn>
       <MapText>
-        [김포본사]
-        <br></br>
-        경기도 김포시 월곶면 애기봉로 392-11
-        <br></br>
-        T. +82 31 996 8530
+      {t("contact-gimpo")}
       </MapText>
       <MapText>
-        [대구]
-        <br></br>
-        대구광역시 동구 이노밸리로 40
+      {t("contact-daegu")}
       </MapText>
       <MapText>
-        [대전]
-        <br></br>
-        대전광역시 유성구 덕명동로16번길 5-6
+      {t("contact-daejeon")}
       </MapText>
       <MapText>
-        [광주]
-        <br></br>
-        광주광역시 서구 화개중앙로 9 보아스빌1층
+      {t("contact-gwangju")}
       </MapText>
       <MapText>
-        [부산]
-        <br></br>
-        부산 해운대구 마린시티3로 37
+      {t("contact-busan")}
       </MapText>
       <MapText>
-        [남양주]
-        <br></br>
-        경기도 남양주시 진접읍 연평리 417번지
+      {t("contact-namyangju")}
       </MapText>
     </Container>
   );
@@ -60,6 +47,16 @@ const Container = styled.div`
   text-align: right;
   width: 40vw;
   margin-right: 30px;
+  animation: fadeInLeft 1s;
+  @keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }}
 `;
 const MapTitle = styled.p`
   width: 100%;
@@ -82,6 +79,7 @@ const MapText = styled.p`
   line-height: 23px;
   margin-top: 0;
   margin-bottom: 20px;
+  white-space: pre-line;
 `;
 const SeoulMapBtn = styled.div`
   font-size: 20px;

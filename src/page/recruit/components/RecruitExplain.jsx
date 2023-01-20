@@ -1,13 +1,15 @@
 import styled from "styled-components";
+import { useTranslation } from 'react-i18next'
+import useScrollFadeIn from "../../../hooks/useScrollFadeIn"
 
 const RecruitExplain = () => {
+  const { t } = useTranslation()
+  const animatedItem = useScrollFadeIn();
+
   return (
-    <div>
-      <Explain>
-        ㈜인투온과 함께 일할 준비가 된 분은 개성 있는 이력서, 포트폴리오를
-        아래의 이메일로 보내주세요.
-        <br></br>서류접수는 이메일로 한하며, 인터뷰 대상자 선정 후 개별 통보해
-        드립니다.
+    <div {...animatedItem}>
+      <Explain style={{"whiteSpace":"pre-line"}}>
+      {t("recruit-footer")}
       </Explain>
       <Arrow>⌵</Arrow>
       <SendEmail href="mailto:recruit@into-on.com">
