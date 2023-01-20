@@ -3,16 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next'
 
+
 const Header = () => {
   const navigate = useNavigate();
-  const { i18n } = useTranslation(['page']);
+  const { i18n } = useTranslation(["page"]);
   const [onMain, setOnMain] = useState("false");
   const [korean, setKorean] = useState("true")
   const ulRef = useRef();
   const path = window.location.pathname;
 
-  const changelanguageToKo = () => i18n.changeLanguage('ko')
-  const changelanguageToEn = () => i18n.changeLanguage('en')
+  const changelanguageToKo = () => i18n.changeLanguage("ko");
+  const changelanguageToEn = () => i18n.changeLanguage("en");
 
   const categoryList = [
     "about",
@@ -92,7 +93,8 @@ const Header = () => {
 };
 
 const Container = styled.div`
-background-color: ${(props) => (props.background === "true" ? "transparent"  : "#fff")};
+  background-color: ${(props) =>
+    props.background === "true" ? "transparent" : "#fff"};
   height: 84px;
   position: fixed;
   top: 0;
@@ -107,7 +109,6 @@ background-color: ${(props) => (props.background === "true" ? "transparent"  : "
   backface-visibility: hidden;
   z-index: 999;
   overflow-x: hidden;
- 
 `;
 const Logo = styled.div`
   width: 120px;
@@ -130,15 +131,13 @@ const TextBox = styled.ul`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding-right: 30px;
+  padding-right: 50px;
   justify-content: center;
-    overflow: hidden;
-    list-style: none;
-    margin-bottom: 43px;
-    margin-top: 50px;
-    padding: 0;
-    line-height: 34px;
-
+  overflow: hidden;
+  list-style: none;
+  margin-bottom: 43px;
+  margin-top: 50px;
+  line-height: 34px;
 
   li {
     margin-right: 45px;
@@ -151,20 +150,20 @@ const TextBox = styled.ul`
 
 const Circle = styled.div`
   width: 2rem;
-  height:  2rem;
+  height: 2rem;
   line-height: 0%;
   border: 1px solid ${(props)=>(props.color === "true" ? "#e71e38" : "#9fa0a0")};
   border-radius: 50%;
   margin-right: 0.5rem;
 
-
-  li{
+  li {
     font-size: 0.7rem;
     position: relative;
     top: 1rem;
     left: 0.3rem;
-  }
-`
+
+`;
+
 
 const CircleEn = styled.div`
   width: 2rem;
@@ -181,4 +180,5 @@ const CircleEn = styled.div`
     top: 1rem;
     left: 0.3rem;
   }`
+
 export default Header;
