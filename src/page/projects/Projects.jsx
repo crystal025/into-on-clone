@@ -37,27 +37,10 @@ const Projects = () => {
         fourRefChild.style = "color:#e0dede";
         fiveRefChild.style = "color:#e0dede";
         sixRefChild.style = "color:#e0dede";
-      
-    
   };
-
-  const hoverEvent = () => {
-    const liList = document.querySelectorAll("li");
-    liList.forEach((li) => {
-      li.addEventListener("mouseover", () => {
-        li.style = "color:#e71e38";
-      });
-    });
-    liList.forEach((li) => {
-      li.addEventListener("mouseout", () => {
-        li.style = "color:#e0dede";
-      });
-    });
-  } 
 
   useEffect(() => {
     getCategory();
-    hoverEvent();
   }, [window.location.pathname]);
 
   return (
@@ -119,7 +102,7 @@ const Container = styled.div`
     list-style: none;
     color: #e0dede;
 
-    :hover {
+    &:hover {
       color: #e71e38;
       text-decoration: underline;
     }
