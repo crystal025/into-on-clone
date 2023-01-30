@@ -25,7 +25,7 @@ const ProjectBox = () => {
       url: "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2022/12/hybrid-2.png",
       title: "Hybrid Symposium",
       content: "2022",
-      category: "webinar",
+      category: "webinar, others",
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ const ProjectBox = () => {
       url: "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2020/02/메인-2.jpg",
       title: "Gilead",
       content: "The Liver Week / JUN 2019 / BUSAN, KOREA",
-      category: "space",
+      category: "space, others",
     },
     {
       id: 7,
