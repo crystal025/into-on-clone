@@ -24,10 +24,10 @@ const MainSlider = () => {
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main1-1.jpg"
             }
           >
-          <TitleBox>beauty of senses & joy of challenges</TitleBox>
-          <ContentBox>
-            Our design creatively tells your brand's story.
-          </ContentBox>
+            <TitleBox>beauty of senses & joy of challenges</TitleBox>
+            <ContentBox>
+              Our design creatively tells your brand's story.
+            </ContentBox>
           </ImageBox>
         </div>
         <div>
@@ -37,10 +37,10 @@ const MainSlider = () => {
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main2-1.jpg"
             }
           >
-          <TitleBox>beauty of senses & joy of challenges</TitleBox>
-          <ContentBox>
-            Our design creatively tells your brand's story.
-          </ContentBox> 
+            <TitleBox>beauty of senses & joy of challenges</TitleBox>
+            <ContentBox>
+              Our design creatively tells your brand's story.
+            </ContentBox>
           </ImageBox>
         </div>
         <div>
@@ -50,10 +50,10 @@ const MainSlider = () => {
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main3-2.jpg"
             }
           >
-          <TitleBox>beauty of senses & joy of challenges</TitleBox>
-          <ContentBox>
-            Our design creatively tells your brand's story.
-          </ContentBox>
+            <TitleBox>beauty of senses & joy of challenges</TitleBox>
+            <ContentBox>
+              Our design creatively tells your brand's story.
+            </ContentBox>
           </ImageBox>
         </div>
         <div>
@@ -63,10 +63,10 @@ const MainSlider = () => {
               "http://intoon.newbird0412.gethompy.com/wp-content/uploads/2018/10/main4-1.jpg"
             }
           >
-          <TitleBox>beauty of senses & joy of challenges</TitleBox>
-          <ContentBox>
-            Our design creatively tells your brand's story.
-          </ContentBox>
+            <TitleBox>beauty of senses & joy of challenges</TitleBox>
+            <ContentBox>
+              Our design creatively tells your brand's story.
+            </ContentBox>
           </ImageBox>
         </div>
       </StyledSlide>
@@ -88,9 +88,9 @@ const ImageBox = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-position: center;
   background-size: cover;
   background-image: url(${(props) => props.url});
@@ -127,7 +127,7 @@ const StyledSlide = styled(Slider)`
   .slick-dots {
     position: relative;
     bottom: 70px;
-   
+
     .slick-active {
       button::before {
         color: #c1c1c1;
@@ -141,7 +141,6 @@ const StyledSlide = styled(Slider)`
   }
 `;
 
-
 const TitleBox = styled.h2`
   z-index: 999;
   color: #fff;
@@ -151,6 +150,18 @@ const TitleBox = styled.h2`
   font-style: normal;
   line-height: 1.9;
   text-align: center;
+  animation: fadeIn 1s ease-in;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, -100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
 `;
 
 const ContentBox = styled.p`
@@ -162,6 +173,7 @@ const ContentBox = styled.p`
   font-style: normal;
   line-height: 1.9;
   text-align: center;
+  animation: fadeIn 1s;
 `;
 
 export default MainSlider;

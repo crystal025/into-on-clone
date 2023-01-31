@@ -28,12 +28,13 @@ const Header = () => {
     const twoRefChild = ulRef?.current.children[notIndex[1]];
     const threeRefChild = ulRef?.current.children[notIndex[2]];
     const fourRefChild = ulRef?.current.children[notIndex[3]];
-
-    refChild.style = "color:#e71e38";
-    oneRefChild.style = "color:#e0dede";
-    twoRefChild.style = "color:#e0dede";
-    threeRefChild.style = "color:#e0dede";
-    fourRefChild.style = "color:#e0dede";
+    if (refChild !== undefined) {
+      refChild.style.color = "#e71e38";
+      oneRefChild.style = "color:#e0dede";
+      twoRefChild.style = "color:#e0dede";
+      threeRefChild.style = "color:#e0dede";
+      fourRefChild.style = "color:#e0dede";
+    }
   };
 
   const onClickPartner = () => {
@@ -144,7 +145,7 @@ const Circle = styled.div`
   width: 2rem;
   height: 2rem;
   line-height: 0%;
-  border: 1px solid
+  border: 2px solid
     ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
   color: ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
   border-radius: 50%;
@@ -162,7 +163,7 @@ const CircleEn = styled.div`
   width: 2rem;
   height: 2rem;
   line-height: 0%;
-  border: 1px solid
+  border: 2px solid
     ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
   color: ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
   border-radius: 50%;
