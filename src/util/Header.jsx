@@ -144,7 +144,7 @@ const Circle = styled.div`
   width: 2rem;
   height: 2rem;
   line-height: 0%;
-  border: 1px solid
+  border: 2px solid
     ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
   color: ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
   border-radius: 50%;
@@ -162,7 +162,7 @@ const CircleEn = styled.div`
   width: 2rem;
   height: 2rem;
   line-height: 0%;
-  border: 1px solid
+  border: 2px solid
     ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
   color: ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
   border-radius: 50%;
