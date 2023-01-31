@@ -28,12 +28,13 @@ const Header = () => {
     const twoRefChild = ulRef?.current.children[notIndex[1]];
     const threeRefChild = ulRef?.current.children[notIndex[2]];
     const fourRefChild = ulRef?.current.children[notIndex[3]];
-
-    refChild.style = "color:#e71e38";
-    oneRefChild.style = "color:#e0dede";
-    twoRefChild.style = "color:#e0dede";
-    threeRefChild.style = "color:#e0dede";
-    fourRefChild.style = "color:#e0dede";
+    if (refChild !== undefined) {
+      refChild.style.color = "#e71e38";
+      oneRefChild.style = "color:#e0dede";
+      twoRefChild.style = "color:#e0dede";
+      threeRefChild.style = "color:#e0dede";
+      fourRefChild.style = "color:#e0dede";
+    }
   };
 
   const onClickPartner = () => {

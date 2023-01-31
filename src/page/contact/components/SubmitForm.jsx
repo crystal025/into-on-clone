@@ -1,20 +1,33 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SubmitForm = () => {
+  const form_ref = useRef();
+  const navigate = useNavigate();
   const {
     register,
-    setError,
-    getValues,
     formState: { errors, isDirty, isSubmitting },
     handleSubmit,
   } = useForm({ criteriaMode: "all", mode: "onChange" });
 
   const onVaild = async (data) => {
-    console.log(data);
+    const serviceId = process.env.REACT_APP_SERVICE_ID;
+    const templateId = process.env.REACT_APP_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+    emailjs
+      .sendForm(serviceId, templateId, form_ref.current, publicKey)
+      .then(
+        (result) =>
+          result.status === 200 && alert("이메일 전송이 완료되었습니다.")
+      )
+      .then(() => navigate("/contact"))
+      .catch((err) => console.log(err));
   };
   return (
-    <FormBox onSubmit={handleSubmit(onVaild)}>
+    <FormBox ref={form_ref} onSubmit={handleSubmit(onVaild)}>
       <FormText>Name</FormText>
       <FormInput
         name="name"
@@ -43,7 +56,7 @@ const SubmitForm = () => {
         <ErrorMsg>{errors.email.message}</ErrorMsg>
       )}
       <FormText>Subject</FormText>
-      <FormInput />
+      <FormInput name="subject" />
       <FormText>Message</FormText>
       <FormTextArea
         name="message"
@@ -124,6 +137,7 @@ const SubmitBtn = styled.button`
   background: #e71e38;
   border: 0;
   margin-bottom: 50px;
+  cursor: pointer;
 `;
 
 const ErrorMsg = styled.p`
