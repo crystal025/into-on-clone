@@ -19,10 +19,21 @@ const ImgBox = styled.div`
   overflow: hidden;
   flex-grow: 0;
   text-align: left;
-
+  animation: fadeIn 3s;
   &:hover {
     ${"p"} {
       visibility: visible;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, -100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
     }
   }
 `;

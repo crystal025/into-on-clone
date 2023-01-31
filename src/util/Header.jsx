@@ -1,46 +1,39 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from 'react-i18next'
-
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const navigate = useNavigate();
   const { i18n } = useTranslation(["page"]);
   const [onMain, setOnMain] = useState("false");
-  const [korean, setKorean] = useState("true")
+  const [korean, setKorean] = useState("true");
   const ulRef = useRef();
   const path = window.location.pathname;
 
   const changelanguageToKo = () => i18n.changeLanguage("ko");
   const changelanguageToEn = () => i18n.changeLanguage("en");
 
-  const categoryList = [
-    "about",
-    "projects",
-    "recruit",
-    "contact",
-    "partner"
-  ];
+  const categoryList = ["about", "projects", "recruit", "contact", "partner"];
   const indexList = [0, 1, 2, 3, 4];
-  
+
   const getCategory = async () => {
     const index = categoryList.findIndex(
       (category) => category === window.location.pathname.split("/")[1]
     );
 
     const notIndex = indexList.filter((i) => i !== index);
-      const refChild = ulRef?.current.children[index];
-      const oneRefChild = ulRef?.current.children[notIndex[0]];
-      const twoRefChild = ulRef?.current.children[notIndex[1]];
-      const threeRefChild = ulRef?.current.children[notIndex[2]];
-      const fourRefChild = ulRef?.current.children[notIndex[3]];
-      
-        refChild.style = "color:#e71e38";
-        oneRefChild.style = "color:#e0dede";
-        twoRefChild.style = "color:#e0dede";
-        threeRefChild.style = "color:#e0dede";
-        fourRefChild.style = "color:#e0dede";     
+    const refChild = ulRef?.current.children[index];
+    const oneRefChild = ulRef?.current.children[notIndex[0]];
+    const twoRefChild = ulRef?.current.children[notIndex[1]];
+    const threeRefChild = ulRef?.current.children[notIndex[2]];
+    const fourRefChild = ulRef?.current.children[notIndex[3]];
+
+    refChild.style = "color:#e71e38";
+    oneRefChild.style = "color:#e0dede";
+    twoRefChild.style = "color:#e0dede";
+    threeRefChild.style = "color:#e0dede";
+    fourRefChild.style = "color:#e0dede";
   };
 
   const onClickPartner = () => {
@@ -48,17 +41,16 @@ const Header = () => {
   };
 
   const searchLang = () => {
-    if(i18n.language === "ko"){
-      setKorean("true")
+    if (i18n.language === "ko") {
+      setKorean("true");
+    } else if (i18n.language === "en") {
+      setKorean("false");
     }
-    else if(i18n.language === "en"){
-      setKorean("false")
-    }
-  }
+  };
 
-  useEffect(()=>{
-    searchLang()
-  },[i18n.language])
+  useEffect(() => {
+    searchLang();
+  }, [i18n.language]);
 
   useEffect(() => {
     getCategory();
@@ -82,10 +74,10 @@ const Header = () => {
         <li onClick={() => navigate("/contact")}>contact</li>
         <li onClick={onClickPartner}>partner</li>
         <Circle color={korean}>
-        <li onClick={changelanguageToKo} >KOR</li>
+          <li onClick={changelanguageToKo}>KOR</li>
         </Circle>
         <CircleEn color={korean}>
-        <li onClick={changelanguageToEn} >ENG</li>
+          <li onClick={changelanguageToEn}>ENG</li>
         </CircleEn>
       </TextBox>
     </Container>
@@ -152,7 +144,9 @@ const Circle = styled.div`
   width: 2rem;
   height: 2rem;
   line-height: 0%;
-  border: 1px solid ${(props)=>(props.color === "true" ? "#e71e38" : "#9fa0a0")};
+  border: 1px solid
+    ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
+  color: ${(props) => (props.color === "true" ? "#e71e38" : "#9fa0a0")};
   border-radius: 50%;
   margin-right: 0.5rem;
 
@@ -161,24 +155,25 @@ const Circle = styled.div`
     position: relative;
     top: 1rem;
     left: 0.3rem;
-
+  }
 `;
-
 
 const CircleEn = styled.div`
   width: 2rem;
-  height:  2rem;
+  height: 2rem;
   line-height: 0%;
-  border: 1px solid ${(props)=>(props.color === "true" ? "#9fa0a0" :  "#e71e38" )};
+  border: 1px solid
+    ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
+  color: ${(props) => (props.color === "true" ? "#9fa0a0" : "#e71e38")};
   border-radius: 50%;
   margin-right: 0.5rem;
 
-
-  li{
+  li {
     font-size: 0.7rem;
     position: relative;
     top: 1rem;
     left: 0.3rem;
-  }`
+  }
+`;
 
 export default Header;
