@@ -24,10 +24,9 @@ const MapBox = ({ position }) => {
 
   return (
     <Map
-      id="map"
-      ref={map_ref}
       center={pointer}
       style={{ width: "100%", height: "360px", marginTop: "100px" }}
+      level={2}
     >
       <MapMarker
         position={pointer}
@@ -39,7 +38,7 @@ const MapBox = ({ position }) => {
           },
           options: {
             offset: {
-              x: 10,
+              x: 0,
               y: 50,
             },
           },
