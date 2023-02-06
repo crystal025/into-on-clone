@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ProjectBox from "./components/ProjectBox";
-import useScrollFadeIn from "../../hooks/useScrollFadeIn"
+import useScrollFadeIn from "../../hooks/useScrollFadeIn";
 
 const Projects = () => {
   const animatedItem = useScrollFadeIn();
@@ -19,27 +19,27 @@ const Projects = () => {
     "others",
   ];
   const indexList = [0, 1, 2, 3, 4, 5, 6];
-  
+
   const getCategory = async () => {
     const index = categoryList.findIndex(
       (category) => category === window.location.pathname.split("/")[2]
     );
     const notIndex = indexList.filter((i) => i !== index);
-      const refChild = ulRef?.current.children[index];
-      const oneRefChild = ulRef?.current.children[notIndex[0]];
-      const twoRefChild = ulRef?.current.children[notIndex[1]];
-      const threeRefChild = ulRef?.current.children[notIndex[2]];
-      const fourRefChild = ulRef?.current.children[notIndex[3]];
-      const fiveRefChild = ulRef?.current.children[notIndex[4]];
-      const sixRefChild = ulRef?.current.children[notIndex[5]];
-      
-        refChild.style = "color:#e71e38";
-        oneRefChild.style = "color:#e0dede";
-        twoRefChild.style = "color:#e0dede";
-        threeRefChild.style = "color:#e0dede";
-        fourRefChild.style = "color:#e0dede";
-        fiveRefChild.style = "color:#e0dede";
-        sixRefChild.style = "color:#e0dede";
+    const refChild = ulRef?.current.children[index];
+    const oneRefChild = ulRef?.current.children[notIndex[0]];
+    const twoRefChild = ulRef?.current.children[notIndex[1]];
+    const threeRefChild = ulRef?.current.children[notIndex[2]];
+    const fourRefChild = ulRef?.current.children[notIndex[3]];
+    const fiveRefChild = ulRef?.current.children[notIndex[4]];
+    const sixRefChild = ulRef?.current.children[notIndex[5]];
+
+    refChild.style = "color:#e71e38";
+    oneRefChild.style = "color:#e0dede";
+    twoRefChild.style = "color:#e0dede";
+    threeRefChild.style = "color:#e0dede";
+    fourRefChild.style = "color:#e0dede";
+    fiveRefChild.style = "color:#e0dede";
+    sixRefChild.style = "color:#e0dede";
   };
 
   useEffect(() => {
@@ -104,6 +104,7 @@ const Container = styled.div`
     margin: 15px;
     list-style: none;
     color: #e0dede;
+    cursor: pointer;
 
     &:hover {
       color: #e71e38;
