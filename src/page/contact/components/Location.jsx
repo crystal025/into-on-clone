@@ -8,14 +8,14 @@ const Location = ({ position, setPosition }) => {
     <Container>
       <MapTitle>DESIGN STUDIO & SEOUL OFFICE</MapTitle>
       <SeoulMapBtn onClick={() => setPosition(!position)} position={position}>
-        ⌖
+        ▼
       </SeoulMapBtn>
       <MapTextContainer>
         <MapText>{t("contact-seoul")}</MapText>
       </MapTextContainer>
       <MapTitle>EXHIBITION & LOGISTICS CENTER</MapTitle>
       <MapBtn onClick={() => setPosition(!position)} position={position}>
-        ⌖
+        ▼
       </MapBtn>
       <MapTextContainer>
         <MapText>{t("contact-gimpo")}</MapText>
@@ -74,20 +74,22 @@ const MapText = styled.p`
   white-space: pre-line;
 `;
 const SeoulMapBtn = styled.div`
-  font-size: 3rem;
+  font-size: 2.2rem;
   cursor: pointer;
   position: relative;
-  bottom: 74px;
+  bottom: 64px;
+  left: 0.5rem;
   :hover {
     color: #e61b39;
   }
   color: ${(props) => (props.position ? " #858484" : "#e61b39")};
 `;
 const MapBtn = styled.div`
-  font-size: 3rem;
+  font-size: 2.2rem;
   cursor: pointer;
   position: relative;
-  bottom: 74px;
+  bottom: 64px;
+  left: 0.5rem;
   :hover {
     color: #e61b39;
   }
